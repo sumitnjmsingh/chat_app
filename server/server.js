@@ -18,7 +18,7 @@ const io = socketIo(server, { cors: { origin: '*' } });
 
 
 
-mongoose.connect(process.env.MONGO_UR
+mongoose.connect("mongodb+srv://sumitsamsingh1111:22leZS8IyFqIGrAy@cluster0.2roi64i.mongodb.net/chat_web?retryWrites=true&w=majority&appName=Cluster0"
 
 ).then(() => console.log('MongoDB connected'))
   .catch(err => console.log("mongodb connection error is:::::",err));
@@ -107,5 +107,5 @@ io.use((socket, next) => {
   });
 });
 
-server.listen(process.env.PORT, () => console.log(`Server has started on port ${process.env.PORT}`));
+server.listen(5000, () => console.log("Server has started on port 5000"));
 
