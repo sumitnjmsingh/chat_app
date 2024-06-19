@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_UR
 
 app.use(cors(
     {
-        origin: 'chat-frontend-orpin.vercel.app', 
+        origin: 'https://chat-app-ntj2.vercel.app', 
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true,
         allowedHeaders: 'Content-Type,Authorization'
