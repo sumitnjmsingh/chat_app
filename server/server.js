@@ -11,6 +11,16 @@ const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 const User = require('./models/User');
 
 
+app.use(cors(
+    {
+        origin: 'https://chat-app-ntj2.vercel.app', 
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+        credentials: true,
+        allowedHeaders: 'Content-Type,Authorization'
+    }
+));
+
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, { cors: { origin: '*' } });
@@ -23,14 +33,7 @@ mongoose.connect("mongodb+srv://sumitsamsingh1111:22leZS8IyFqIGrAy@cluster0.2roi
 ).then(() => console.log('MongoDB connected'))
   .catch(err => console.log("mongodb connection error is:::::",err));
 
-app.use(cors(
-    {
-        origin: 'https://chat-app-ntj2.vercel.app', 
-        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-        credentials: true,
-        allowedHeaders: 'Content-Type,Authorization'
-    }
-));
+
 app.use(express.json());
 
 app.get('/',(req,res)=>{
