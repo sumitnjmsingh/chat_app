@@ -33,7 +33,9 @@ app.use(cors(
 ));
 app.use(express.json());
 
-
+app.get('/',(req,res)=>{
+  res.send("Hello");
+})
 app.post('/register', async (req, res) => {
   const { username, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
