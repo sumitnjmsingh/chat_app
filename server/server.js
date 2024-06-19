@@ -12,12 +12,12 @@ const User = require('./models/User');
 
 
 app.use(cors(
-    {
-        origin: 'https://chat-app-ntj2.vercel.app', 
-        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-        credentials: true,
-        allowedHeaders: 'Content-Type,Authorization'
-    }
+    // {
+    //     origin: 'https://chat-app-ntj2.vercel.app', 
+    //     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    //     credentials: true,
+    //     allowedHeaders: 'Content-Type,Authorization'
+    // }
 ));
 
 
