@@ -20,7 +20,7 @@ const Register = () => {
 
     try {
         console.log("sumit is here 1")
-      const res=await axios.post('https://chat-app-sand-beta.vercel.app/register',{ username, password }, {
+      const res=await axios.post('https://localhost:5000/register',{ username, password }, {
         headers: {
           'Content-Type': 'application/json',
            
