@@ -9,7 +9,7 @@ const Register = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials =true;
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +20,13 @@ const Register = () => {
 
     try {
         console.log("sumit is here 1")
-      const res=await axios.post('https://chat-app-sand-beta.vercel.app/register',{ username, password });
+      const res=await axios.post('https://chat-app-sand-beta.vercel.app/register',{ username, password }, {
+        headers: {
+          'Content-Type': 'application/json',
+           
+        },
+        withCredentials: true // Ensure credentials such as cookies are sent
+      });
 
         console.log("sumit is here 2")
         // const data=await res.json();
